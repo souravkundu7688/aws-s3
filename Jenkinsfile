@@ -4,6 +4,11 @@ pipeline{
 	pollSCM '* * * * *'
     }
     stages{
+	stage('build'){
+		steps{
+			build job: "test-build", propagate: true, wait: true
+		}
+	}
         stage('verify'){
             steps{
                 withCredentials([[
