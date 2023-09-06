@@ -11,6 +11,7 @@ pipeline{
                         sh '''
 						cd aws_file
 						sh aws_s3_verfiy.sh
+						hostname -i
 						'''
                     }
             }
